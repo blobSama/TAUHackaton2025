@@ -12,6 +12,7 @@ Base = declarative_base()
 engine = create_engine(DATABASE_URL, connect_args={"check_same_thread": False})
 SessionLocal = sessionmaker(bind=engine, autoflush=False, autocommit=False)
 scope = ""
+current_answer = ""
     
 
 # DB model
@@ -149,7 +150,7 @@ item4 = ItemDB(ex_num=1, question_num="4",
 
 # Routes
 
-@app.get("/prompt")
+@app.post("/prompt")
 def get_exercises(item: Item, db: Session = Depends(get_db)):
     # Get the scope from the file
     with open("scope.txt", "r") as file:
@@ -203,7 +204,7 @@ def get_exercises(item: Item, db: Session = Depends(get_db)):
     # Get the output from the API, and return it
     gemini_output = response.json()
     print(gemini_output)
-    return gemini_output["candidates"][0]["content"][0]["parts"][0]["text"]
+    current_answer = gemini_output["candidates"][0]["content"][0]["parts"][0]["text"]
     
 
 def compare_answers_txt(model_answer: str, student_answer: str, scope: str):
@@ -295,3 +296,7 @@ def add_exercise(exercise: ItemDB, db: Session = Depends(get_db)):
     db.commit()
     db.refresh(db_item)
     return db_item
+
+@app.get("/answer")
+def get_exercises():
+    return current_answer
