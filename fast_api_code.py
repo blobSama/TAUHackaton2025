@@ -166,7 +166,7 @@ def get_exercises(item: Item, db: Session = Depends(get_db)):
     
     # Get the exercise from the DB
     exercise = db.query(ItemDB).filter(ItemDB.ex_num == int(item.ex_num) 
-                                       and ItemDB.question_num == int(item.question_num))
+                                       and ItemDB.question_num == int(item.question_num)).first()
     if not exercise:
         raise HTTPException(status_code=404, detail="Exercise not found")
     question = exercise.question
