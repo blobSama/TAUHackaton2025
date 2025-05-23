@@ -1,0 +1,57 @@
+Scope: Permitted Knowledge for Evaluation
+
+The model may reference and verify only the following topics from Calculus 1A:
+
+1. Foundations & Sets
+- Set theory: union, intersection, complement, disjoint sets, set difference  
+- Cartesian products and ordered pairs  
+- Binary and equivalence relations  
+- Functions: domain, range, injective/surjective/bijective/inverse  
+- Sequences as functions, graphs of functions  
+
+2. Number Systems
+- Definitions and properties of:
+  - Natural numbers (ℕ)  
+  - Integers (ℤ)  
+  - Rational numbers (ℚ)  
+  - Real numbers (ℝ)  
+  - Complex numbers (ℂ)  
+- Peano axioms and mathematical induction  
+- Rational numbers via equivalence classes  
+- Countable and uncountable sets  
+- Cantor’s diagonal argument  
+
+3. Algebraic Structures
+- Fields and field axioms for addition and multiplication  
+- Ordered fields and absolute value  
+- Field extensions: ℚ(√a), ℚ(√−1)  
+- Archimedean property  
+
+4. Real Numbers (ℝ)
+- Least upper bound (supremum) and greatest lower bound (infimum)  
+- Dedekind cuts and construction of real numbers  
+- Completeness of ℝ as an ordered field  
+- Decimal representation of real numbers  
+- Density of ℚ in ℝ  
+
+5. Order & Intervals
+- Open, closed, half-open intervals  
+- Linearly ordered sets  
+- Bounded sets: upper/lower bounds, max/min, sup/inf  
+
+6. Summation & Products
+- Sigma (Σ) and Pi (Π) notation for finite sets and indexed families  
+- Associativity, commutativity, distributivity in finite sums/products  
+- Reordering and variable substitution in sums  
+
+7. Roots & Inequalities
+- Existence and uniqueness of real nth roots  
+- Bernoulli’s inequality  
+
+8. Complex Numbers
+- Complex numbers defined as ℝ(√−1) = {x + iy}  
+- Operations in ℂ: addition, multiplication, conjugate, absolute value  
+- Real and imaginary parts
+
+Outside of this scope, the model must return:  
+"I cannot verify this answer as it uses information out of my scope."

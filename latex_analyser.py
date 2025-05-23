@@ -74,13 +74,10 @@ def classify_step(step):
     return 'other'
 
 # --- Main analysis ---
-def main():
+def analyse_proof(proof):
     proof = get_proof_input()
     steps = split_proof(proof)
     print("\nProof analysis:\n")
     for idx, step in enumerate(steps, 1):
         label = classify_step(step)
         print(f"Step {idx}: {step} [{label}]")
-
-if __name__ == "__main__":
-    main() 
